@@ -1,9 +1,0 @@
-numpy
-pandas
-matplotlib
-requests
-yfinance
-pyomo
-tqdm
-lxml
-html5lib
