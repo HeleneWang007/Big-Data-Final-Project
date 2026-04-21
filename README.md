@@ -29,7 +29,7 @@ index_enhancement_project/
     └── test_signals.py
 ```
 
-## What moved out of the notebook
+## Main Project Files
 
 - `data.py`: constituents download/parsing, sector matrix construction, price download
 - `signals.py`: momentum signal and cross-sectional z-scoring
