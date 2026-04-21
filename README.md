@@ -1,7 +1,5 @@
 # Optimization-Based Index Enhancement Project
 
-This repository converts the original notebook into a Python package layout. The analytical notebook is preserved under `notebooks/`, while reusable logic is moved into importable modules under `src/index_enhancement/`.
-
 ## Project purpose
 
 The project studies an optimization-based index-enhancement strategy on the S&P 500. It builds a sector-constrained portfolio using momentum-based expected returns and linear programming, then evaluates full-period backtest performance over a grid of parameter settings.
@@ -67,6 +65,3 @@ Or with pytest:
 pytest
 ```
 
-## Notes
-
-This refactor keeps the same core logic where feasible, but the package structure separates reusable functions from notebook-only exploration and plotting. That separation is the main step needed for reproducibility, cleaner organization, and unit testing.
