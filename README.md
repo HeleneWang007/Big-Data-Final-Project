@@ -115,25 +115,10 @@ The model is solved using Pyomo with an LP solver such as HiGHS, Gurobi, CBC, CP
 
 The project evaluates model performance over a grid of economically meaningful hyperparameters:
 
-- Active-weight tolerance:  
-  $$
-  \delta \in \{0.005, 0.010, 0.020\}
-  $$
-
-- Turnover cap:  
-  $$
-  \tau \in \{0.10, 0.20, 0.30\}
-  $$
-
-- Sector-exposure tolerance:  
-  $$
-  \gamma^{sector} \in \{0.01, 0.02\}
-  $$
-
-- Transaction-cost coefficient:  
-  $$
-  c \in \{0.0003, 0.0005\}
-  $$
+- Active-weight tolerance: $\delta \in \{0.005, 0.010, 0.020\}$
+- Turnover cap: $\tau \in \{0.10, 0.20, 0.30\}$
+- Sector-exposure tolerance: $\gamma^{sector} \in \{0.01, 0.02\}$
+- Transaction-cost coefficient: $c \in \{0.0003, 0.0005\}$
 
 This produces 36 parameter configurations.
 
