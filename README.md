@@ -116,24 +116,24 @@ The model is solved using Pyomo with an LP solver such as HiGHS, Gurobi, CBC, CP
 The project evaluates model performance over a grid of economically meaningful hyperparameters:
 
 - Active-weight tolerance:  
-  \[
+  $$
   \delta \in \{0.005, 0.010, 0.020\}
-  \]
+  $$
 
 - Turnover cap:  
-  \[
+  $$
   \tau \in \{0.10, 0.20, 0.30\}
-  \]
+  $$
 
 - Sector-exposure tolerance:  
-  \[
+  $$
   \gamma^{sector} \in \{0.01, 0.02\}
-  \]
+  $$
 
 - Transaction-cost coefficient:  
-  \[
+  $$
   c \in \{0.0003, 0.0005\}
-  \]
+  $$
 
 This produces 36 parameter configurations.
 
@@ -151,17 +151,17 @@ The main evaluation metrics are:
 
 The highest-information-ratio configuration is:
 
-\[
+$$
 (\delta, \tau, \gamma^{sector}, c) = (0.020, 0.300, 0.010, 0.0003)
-\]
+$$
 
 This configuration achieves the highest annualized information ratio, but it also has relatively high turnover.
 
 A more balanced configuration is:
 
-\[
+$$
 (\delta, \tau, \gamma^{sector}, c) = (0.020, 0.100, 0.010, 0.0003)
-\]
+$$
 
 This setting provides strong risk-adjusted performance while maintaining lower turnover and tighter benchmark discipline.
 
