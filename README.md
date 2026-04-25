@@ -18,38 +18,38 @@ This project uses optimization as the layer that converts factor signals into an
 
 The decision variable is the post-trade portfolio weight vector:
 
-\[
+$$
 w \in \mathbb{R}^N
-\]
+$$
 
-where \(N\) is the number of stocks in the investable S&P 500 universe.
+where $N$ is the number of stocks in the investable S&P 500 universe.
 
 The expected return vector is constructed from a standardized cross-sectional factor score:
 
-\[
+$$
 \mu = \alpha f
-\]
+$$
 
 The objective maximizes expected return net of linear transaction costs:
 
-\[
+$$
 \max_w \ \mu^\top w - c \sum_{i=1}^{N} |w_i - w_i^{prev}|
-\]
+$$
 
 where:
 
-- \(w_i\) is the new portfolio weight of stock \(i\)
-- \(w_i^{prev}\) is the previous-period portfolio weight
-- \(c\) is the transaction-cost coefficient
-- \(f\) is the standardized factor score
-- \(\alpha\) scales the factor score into expected return
+- $w_i$ is the new portfolio weight of stock $i$
+- $w_i^{prev}$ is the previous-period portfolio weight
+- $c$ is the transaction-cost coefficient
+- $f$ is the standardized factor score
+- $\alpha$ scales the factor score into expected return
 
-Because the absolute-value turnover term is not directly linear, the model introduces auxiliary variables \(t_i\) such that:
+Because the absolute-value turnover term is not directly linear, the model introduces auxiliary variables $t_i$ such that:
 
-\[
+$$
 t_i \geq w_i - w_i^{prev}, \quad
 t_i \geq -(w_i - w_i^{prev})
-\]
+$$
 
 The final model is a linear program.
 
@@ -59,37 +59,37 @@ The portfolio is subject to the following constraints:
 
 1. **Full investment**
 
-\[
+$$
 \sum_i w_i = 1
-\]
+$$
 
 2. **Long-only and single-name cap**
 
-\[
+$$
 0 \leq w_i \leq 0.10
-\]
+$$
 
 3. **Stock-level active-weight bounds**
 
-\[
+$$
 -\delta \leq w_i - b_i \leq \delta
-\]
+$$
 
-where \(b_i\) is the benchmark weight.
+where $b_i$ is the benchmark weight.
 
 4. **Sector neutrality**
 
-\[
+$$
 -\gamma^{sector}\mathbf{1} \leq S^\top w - S^\top b \leq \gamma^{sector}\mathbf{1}
-\]
+$$
 
-where \(S\) is the sector exposure matrix.
+where $S$ is the sector exposure matrix.
 
 5. **Turnover cap**
 
-\[
+$$
 \sum_i t_i \leq \tau
-\]
+$$
 
 These constraints keep the optimized portfolio close to the benchmark while allowing controlled active tilts.
 
